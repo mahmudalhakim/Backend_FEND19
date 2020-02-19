@@ -48,10 +48,11 @@
   echo "<br>";
   echo "Rosor kostar  $flowers[rosor] kr";
 
-  echo "<h3>Globala assosiativa arrayer</h3>";
+  echo "<h3>Globala associativa arrayer</h3>";
   echo "<pre>";
   print_r($_SERVER);
-
+  echo "</pre>";
+  
   ?>
 </body>
 </html>
