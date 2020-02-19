@@ -45,6 +45,7 @@
   echo "</pre>";
 
   echo "Rosor kostar "  . $flowers['rosor'] . "kr";
+  echo "<br>";
   echo "Rosor kostar  $flowers[rosor] kr";
 
   echo "<h3>Globala assosiativa arrayer</h3>";
