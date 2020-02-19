@@ -32,7 +32,7 @@ print "<h2>Utskrift via funktionen print.</h2>";
 
 <p>Lorem ipsum dolor sit amet.</p>
 
-<?="<p>Echo - Shortcut syntax.</p>"?>
+<?="<p>Exempel på echo - shortcut syntax.</p>"?>
 
 </body>
 </html>
