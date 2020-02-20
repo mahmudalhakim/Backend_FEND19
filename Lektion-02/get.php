@@ -8,8 +8,8 @@
 <body>
   <h1>GET-Requset</h1>
   <h3>
-    <a href="http://localhost/Lektion-02/get.php?namn=Mahmud&age=47">
-    http://localhost/Lektion-02/get.php?namn=Mahmud&age=47
+    <a href="http://localhost/Lektion-02/get.php?namn=Mahmud Al Hakim&age=47">
+    http://localhost/Lektion-02/get.php?namn=Mahmud Al Hakim&age=47
     </a>
   </h3>
   <h3>
@@ -41,5 +41,8 @@ echo "<hr>";
 echo "<pre>";
 print_r($_GET);
 echo "</pre>";
+
+// Tips
+// https://www.w3schools.com/tags/ref_urlencode.ASP
 
 ?>
