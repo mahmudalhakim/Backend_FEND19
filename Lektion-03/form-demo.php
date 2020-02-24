@@ -21,18 +21,34 @@
   </form>
 
   <h2>Formulär med POST-Request</h2>
-  <form action="#" method="POST">
-  
+  <form action="form-2-demo.php?id=1234" 
+        method="POST">
+  <!--  Formulärdata kommer att skickas till
+        filen form-2-demo.php
+        OBS! Det finns en Query-String 
+        efter filnamnet, som skapar en 
+        GET-Request (som lagras i $_GET)
+  -->
     <input 
-      type="text" 
+      type="text" required
       placeholder="Ange ditt förnamn"
       name="fornamn"
     > 
     <input 
-      type="text" 
+      type="text" required
       placeholder="Ange ditt efternamn"
       name="efternamn"
     > 
+    <input 
+      type="email" required
+      placeholder="Ange ditt mejl"
+      name="email"
+    > 
+    <!-- Skapa en hidden-field -->
+    <input 
+      type="hidden" 
+      name="id" value="1234">
+
     <input type="submit" value="Skicka">
 
   </form>
