@@ -24,7 +24,9 @@ $array = json_decode($data , true);
 // echo "</pre>";
 
 echo "<h2>Övningar - Arbeta med JSONPlaceholder</h2>";
+
 echo "<h3>Skriv ut alla namn från JSONPlaceholder</h3>";
+
 foreach ($array as $key => $value) {
   // Skriv ut alla nycklar
   // echo $key;  
@@ -88,7 +90,6 @@ foreach ($array as $key => $value) {
           alt='$value[title]'
         >";
 }
-
 
 echo "<h3>5. Skriv ut adressetiketter från JSONPlaceholder</h3>";
 
