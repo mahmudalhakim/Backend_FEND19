@@ -6,8 +6,6 @@
  * 
  * ********************************/
 
-// Arbetsprocessen – PHP Pseudokod
-
 // 1. Ange innehållstypen JSON.
 header("Content-Type: application/json; charset=UTF-8");
 
@@ -43,9 +41,8 @@ $lastNames = [
 // Sätt en gräns/limit på antal namn till 10.
 // Kontrollera om det finns data i GET-Requesten (t.ex. limit=20) 
 // Ändra limit i så fall.
-
 // Exempel på en GET-Request
-// http://localhost/names.php?limit=50
+// http://localhost/api/names/?limit=50
 $limit = 10;
 if(isset($_GET['limit'])){
   $limit = $_GET['limit'];
@@ -62,21 +59,25 @@ while(true) {
     $randFnFemale = rand(0,count($firstNamesFemale)-1);
     $randLastname = rand(0,count($lastNames)-1);
 
-    $name = array("firstname"=>$firstNamesMale[$randFnMale],
+    $randGender = rand(0,1);
+    if($randGender){
+      $firstname = $firstNamesMale[$randFnMale];
+      $gender = "male";
+    }else{
+      $firstname = $firstNamesFemale[$randFnMale];
+      $gender = "female";
+    }
+      
+    $name = array("firstname"=>$firstname,
                   "lastname"=>$lastNames[$randLastname],
-                  "gender" => "male" 
+                  "gender" => $gender
                 );
-    $names[] = $name;
-    if(count($names) >= $limit)
-      break;
 
-    $name = array("firstname"=>$firstNamesFemale[$randFnFemale],
-                  "lastname"=>$lastNames[$randLastname],
-                  "gender" => "female" 
-                );
     $names[] = $name;
+
     if(count($names) >= $limit)
       break;
+      
 }
 
 // Extra - Blanda alla namn i arrayen
