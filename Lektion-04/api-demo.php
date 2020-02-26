@@ -90,7 +90,7 @@ foreach ($array as $key => $value) {
 }
 
 
-echo "<h3>4. Skriv ut adressetiketter från JSONPlaceholder</h3>";
+echo "<h3>5. Skriv ut adressetiketter från JSONPlaceholder</h3>";
 
 $url = "https://jsonplaceholder.typicode.com/users";
 $json = file_get_contents($url); 
