@@ -22,7 +22,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') :
   $sql = "INSERT INTO contacts (name, tel)
           VALUES ( :name , :tel ) ";
 
+  // :name och :tel kallas "parameter markers" = platshållare 
+
   // Prepared statements
+  // Varför?
+  // The database parses, compiles, and performs query optimization 
+  // on the SQL statement template, and stores the result 
+  // without executing it
+  // https://www.w3schools.com/php/php_mysql_prepared_statements.asp
   $stmt = $db->prepare($sql);
 
   // Binda parametrar
@@ -31,6 +38,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') :
 
   // Skicka SQL-satsen till databas-servern
   $stmt->execute();
+
 
 endif;
 
