@@ -17,17 +17,29 @@ $stmt->execute();
 
 $table = '<table class="table">';
 $table .= '<tr>
+            <th>ID</th>  
             <th>Namn</th>
             <th>Telefon</th>
+            <th>Admin</th>
           </tr>';
 while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
   // test
   // print_r($row);
 
-  $name = $row['name'];
+  $id   = htmlspecialchars( $row['id']);
+  $name = htmlspecialchars( $row['name']);
+  $tel  = htmlspecialchars( $row['tel']);
+
   $table .= "<tr>
+              <td> $id </td>
               <td> $name </td>
-              <td> $row[tel]   </td>
+              <td> $tel </td>
+              <td>
+                <a href='update.php?id=$id' 
+                  class='btn btn-outline-info'>
+                  Uppdatera
+                </a>
+              </td>
             </tr>";
 }
 $table .= '</table>';

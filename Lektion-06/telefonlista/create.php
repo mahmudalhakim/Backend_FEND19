@@ -33,8 +33,12 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') :
   $stmt = $db->prepare($sql);
 
   // Binda parametrar
-  $stmt->bindParam(':name' , $_POST['name']);
-  $stmt->bindParam(':tel'  , $_POST['tel']);
+  $name = htmlspecialchars($_POST['name']);
+  $tel  = htmlspecialchars($_POST['tel']);
+  // Övning
+  // Testa att name och tel är minst ett tecken
+  $stmt->bindParam(':name' , $name );
+  $stmt->bindParam(':tel'  , $tel);
 
   // Skicka SQL-satsen till databas-servern
   $stmt->execute();
