@@ -39,6 +39,10 @@ while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
                   class='btn btn-outline-info'>
                   Uppdatera
                 </a>
+                <a href='delete.php?id=$id' 
+                  class='btn btn-outline-danger'>
+                  Ta bort
+                </a>
               </td>
             </tr>";
 }
