@@ -35,8 +35,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') :
   // Binda parametrar
   $name = htmlspecialchars($_POST['name']);
   $tel  = htmlspecialchars($_POST['tel']);
+
   // Övning
   // Testa att name och tel är minst ett tecken
+  
   $stmt->bindParam(':name' , $name );
   $stmt->bindParam(':tel'  , $tel);
 
