@@ -14,7 +14,7 @@ require_once 'db.php';
 
 if(isset($_GET['id'])){
 
-  $id = $_GET['id']; 
+  $id = htmlspecialchars($_GET['id']); 
 
   $sql = "DELETE FROM contacts WHERE id = :id";
   $stmt = $db->prepare($sql);
