@@ -11,4 +11,4 @@
     <title>Videobutiken</title>
   </head>
   <body class="container">
-  <h1><a href="index.php">Videobutiken</a></h1>
+  <h1 class="text-center"><a href="index.php">Videobutiken</a></h1>
