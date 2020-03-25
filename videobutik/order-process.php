@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'):
   // print_r($_POST);
 
   // Testa om kunden finns i databasen
-  $sql = "SELECT * FROM customers WHERE id=:id"; 
+  $sql = "SELECT * FROM video_customers WHERE id=:id"; 
   $stmt = $db->prepare($sql); 
   $stmt->bindParam(':id', $customer_id); 
   $stmt->execute();
