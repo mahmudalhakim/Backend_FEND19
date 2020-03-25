@@ -15,12 +15,16 @@ $stmt = $db->prepare($sql);
 $stmt->bindParam(':id', $id);
 $stmt->execute();
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
-$title = $row['title'];
-$price = $row['price'];
+$title = htmlspecialchars($row['title']);
+$price = htmlspecialchars($row['price']);
 
 ?>
 
-<h2>Beställning</h2>
+<h2 class="text-center">Beställning</h2>
+
+<div class="row">
+<div class="col-md-6 offset-md-3">
+
 
 <form action="order-process.php" method="post"> 
 
@@ -37,7 +41,10 @@ $price = $row['price'];
   <input
     type="hidden"
     name="film_id" 
-    value="<?=$id?>"> <!-- Echo shorthand syntax -->
+    value="<?=$id?>"> 
+    <!-- Echo shortcut syntax
+    https://www.php.net/manual/en/function.echo.php 
+    -->
     
   <input
     type="hidden" 
@@ -47,8 +54,10 @@ $price = $row['price'];
   <input type="submit"
       class="form-control my-2 btn btn-outline-success"
       value="Skicka beställningen">
-      
+
 </form>
+</div> <!-- col -->
+</div> <!-- row -->
 
 <?php
 require_once 'footer.php';

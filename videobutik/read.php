@@ -9,10 +9,10 @@
     echo "<div class='row'>";
 
     while($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
-      $id    = $row['id'];
-      $title = $row['title'];
-      $price = $row['price'];
-      $image = $row['image'];
+      $id    = htmlspecialchars($row['id']);
+      $title = htmlspecialchars($row['title']);
+      $price = htmlspecialchars($row['price']);
+      $image = htmlspecialchars($row['image']);
 
       // Skapa src till img-taggen
       if(empty($image))
@@ -22,7 +22,7 @@
 
       ?>
 
-      <div class="col-md-3">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
       
         <a href="order-form.php?id=<?php echo $id; ?>">
           <div class="card">
