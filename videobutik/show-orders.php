@@ -15,9 +15,9 @@ $sql = "SELECT
             F.title AS Filmtitel,
             O.date  AS Orderdatum
         FROM
-            orders    AS O,
-            customers AS C,
-            films     AS F
+            video_orders    AS O,
+            video_customers AS C,
+            video_films     AS F
         WHERE
             O.film = F.id 
             AND 

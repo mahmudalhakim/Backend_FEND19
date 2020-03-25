@@ -10,7 +10,7 @@ require_once 'db.php';
 
 $id = htmlspecialchars($_GET['id']);
 
-$sql = "SELECT * FROM films WHERE id=:id";
+$sql = "SELECT * FROM video_films WHERE id=:id";
 $stmt = $db->prepare($sql);
 $stmt->bindParam(':id', $id);
 $stmt->execute();

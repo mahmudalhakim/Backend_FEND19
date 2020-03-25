@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'):
                 </div>";
 
     // Skicka beställningen till databasen
-    $sql = "INSERT INTO orders(film, customer)
+    $sql = "INSERT INTO video_orders(film, customer)
             VALUES (:film, :customer)";
     $stmt = $db->prepare($sql);
     $stmt->bindParam(':film', $film_id);

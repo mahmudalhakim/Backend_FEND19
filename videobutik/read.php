@@ -3,7 +3,7 @@
     // C R U D
     // Hämta alla filmer
     require_once 'db.php';
-    $stmt = $db->prepare("SELECT * FROM films");
+    $stmt = $db->prepare("SELECT * FROM video_films");
     $stmt->execute();
 
     echo "<div class='row'>";
