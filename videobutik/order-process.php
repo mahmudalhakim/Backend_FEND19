@@ -40,6 +40,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'):
                 <p>Vi kommer att skicka en länk till </p>
                 <p>$email</p>
                 </div>";
+
+    // Skicka beställningen till databasen
+    $sql = "INSERT INTO orders(film, customer)
+            VALUES (:film, :customer)";
+    $stmt = $db->prepare($sql);
+    $stmt->bindParam(':film', $film_id);
+    $stmt->bindParam(':customer', $customer_id); 
+    $stmt->execute();
   }
 
   echo $message;

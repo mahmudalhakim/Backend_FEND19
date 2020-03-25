@@ -12,3 +12,4 @@
   </head>
   <body class="container">
   <h1 class="text-center"><a href="index.php">Videobutiken</a></h1>
+  <h2 class="text-center"><a href="show-orders.php">Visa alla beställningar</a></h2>
